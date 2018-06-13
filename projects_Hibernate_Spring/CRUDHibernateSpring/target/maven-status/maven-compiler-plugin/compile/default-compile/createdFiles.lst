@@ -1,0 +1,8 @@
+com\niit\crudhibernatespring\configuration\ConfigurationUser.class
+com\niit\crudhibernatespring\App.class
+com\niit\crudhibernatespring\config\DBConfig.class
+com\niit\crudhibernatespring\daoimpl\UserDAOImpl.class
+com\niit\crudhibernatespring\dao\UserDAO.class
+com\niit\crudhibernatespring\service\implement\UserServiceImpl.class
+com\niit\crudhibernatespring\model\User.class
+com\niit\crudhibernatespring\service\UserService.class

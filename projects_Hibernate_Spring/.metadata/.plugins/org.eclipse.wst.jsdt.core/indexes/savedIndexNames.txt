@@ -1,0 +1,10 @@
+INDEX VERSION 1.4+E:\projects_Hibernate_Spring\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+565938197.index
+3026230686.index
+3560349156.index
+1269222519.index
+873223941.index
+51967910.index
+1242230464.index
+203318033.index
+2179651408.index

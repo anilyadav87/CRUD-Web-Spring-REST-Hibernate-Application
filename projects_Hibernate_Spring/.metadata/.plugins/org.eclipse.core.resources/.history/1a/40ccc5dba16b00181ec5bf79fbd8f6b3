@@ -1,0 +1,17 @@
+package com.niit.crudhibernatespring.configuration;
+
+import org.hibernate.cfg.Environment;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+
+@Configuration
+@PropertySource({ "classpath:src/main/resources/db.properties" })
+public class ConfigurationUser {
+
+	@Autowired
+	private Environment environment;
+	
+	//@bean
+	
+}

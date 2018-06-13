@@ -1,0 +1,14 @@
+package com.niit.crudhibernatespring;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class Usser {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

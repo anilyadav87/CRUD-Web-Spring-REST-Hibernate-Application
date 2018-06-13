@@ -1,0 +1,13 @@
+package com.niit.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.niit.crudhibernatespring.service.UserService;
+
+public class IndexController {
+
+	@Autowired
+	private UserService userService;
+	
+	
+}

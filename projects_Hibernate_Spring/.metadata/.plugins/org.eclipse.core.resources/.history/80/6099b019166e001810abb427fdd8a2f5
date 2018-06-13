@@ -1,0 +1,22 @@
+package com.niit.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.niit.crudhibernatespring.model.User;
+import com.niit.crudhibernatespring.service.UserService;
+
+public class IndexController {
+
+	@Autowired
+	private UserService userService;
+	
+	@PostMapping("/adduser")
+	public String addUser(@ModelAttribute("user") User user)
+	{
+		userService.addUser(user);
+		
+		return "redirect:/";
+	}
+}

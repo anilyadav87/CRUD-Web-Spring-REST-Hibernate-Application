@@ -1,0 +1,12 @@
+package com.niit.crudhibernatespring;
+
+import com.niit.crudhibernatespring.dao.UserDAO;
+import com.niit.crudhibernatespring.model.*;
+import com.niit.crudhibernatespring.daoimpl.UserDAOImpl;
+
+@RunWith(SpringRunner.class)
+@SpringJUnitConfig(classes=AppContext.class)
+public class springTest
+{
+	
+}

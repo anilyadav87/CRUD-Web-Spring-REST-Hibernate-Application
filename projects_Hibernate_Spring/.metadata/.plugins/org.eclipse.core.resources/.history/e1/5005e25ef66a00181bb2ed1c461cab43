@@ -1,0 +1,14 @@
+package com.niit.crudhibernate.dao;
+import java.util.*;
+
+import com.niit.crudhibernate.model.User;
+
+public interface UserDAO {
+	
+	public boolean addUser (User user);
+	public User getUserById (int userid);
+	public List<User> getUserList();
+	public boolean updateRecord(User user);
+
+
+}

@@ -1,0 +1,81 @@
+package com.niit.crudhibernatespring.daoimpl;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+
+import com.niit.crudhibernatespring.dao.UserDAO;
+//import com.niit.crudhibernatespring.config.DBConfig;
+//import com.niit.crudhibernatespring.dao.UserDAO;
+import com.niit.crudhibernatespring.model.User;
+
+@Repository("userDAO")
+@Transactional
+public class UserDAOImpl implements UserDAO
+{
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+//	Session session = DBConfig.getSession();
+
+	
+	public boolean addUser(User user) {
+		sessionFactory.getCurrentSession().save(user);
+		//session.getTransaction().begin();
+		//session.save(user);
+		//session.getTransaction().commit();
+		return true;
+	}
+
+	public User getUserById(int userid) {
+		//First Way
+		
+		User user = (User) sessionFactory.getCurrentSession().createQuery("from User where userId = "+userid).list().get(0);
+	
+		//Other way
+		
+		//User user = (User) sessionFactory.getCurrentSession().createQuery("from User where userId = "+userid).uniqueResult();
+		
+		//User user= (User) session.createQuery("from User where userId = "+ userid).list().get(0);
+		return user;
+	}
+
+	public List<User> getUserList() {
+		
+		List<User> getUserList = sessionFactory.getCurrentSession().createQuery("from User").list();
+		//session.getTransaction().begin();
+		System.out.println("Session is Opened ::"+ sessionFactory.isOpen());
+		System.out.println("Session is Connected ::"+sessionFactory.getCurrentSession().isConnected());
+		//annotation is used to suppress compiler warnings for the annotated element.
+		//@SuppressWarnings("unchecked")
+		//List<User> getUserList = sessionFactory.getCurrentSession().createQuery("from User").list();
+		//session.getTransaction().commit();
+		
+		return getUserList;
+	}
+
+	public boolean updateRecord(User user)
+	{
+		sessionFactory.getCurrentSession().update(user);
+		/*session.getTransaction().begin();
+		session.update(user);
+		session.getTransaction().commit();*/	
+		return true;
+	}
+	
+	public boolean deleteRecord(User user)
+	{
+		sessionFactory.getCurrentSession().delete(user);
+		/*session.getTransaction().begin();
+		session.update(user);
+		session.getTransaction().commit();*/	
+		return true;
+	}
+
+}

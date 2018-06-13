@@ -1,0 +1,38 @@
+package com.niit.crudhibernatespring.service.implement;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.niit.crudhibernatespring.dao.UserDAO;
+import com.niit.crudhibernatespring.model.User;
+import com.niit.crudhibernatespring.service.UserService;
+
+@Service	
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	UserDAO userDAO;
+	
+	//@Override
+	public boolean addUser(User user) {
+		userDAO.addUser(user);
+		return true;
+	}
+	//@Override
+	public User getUserById(int userid) {
+		return userDAO.getUserById(userid);
+	}
+	//@Override
+	public List<User> getUserList() {
+		return userDAO.getUserList();
+	}
+	//@Override
+	public boolean updateRecord(User user) {
+		userDAO.updateRecord(user);
+		return true;
+	}
+	//@Override
+	public boolean deleteRecord(User user) {
+		userDAO.deleteRecord(user);
+		return true;
+	}
+}

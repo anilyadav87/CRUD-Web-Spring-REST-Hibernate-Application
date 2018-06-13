@@ -1,0 +1,8 @@
+1528724621768	Delete element
+1528724626666	Delete element
+1528724660423	Rename type 'Usser'
+1528725026763	Rename type 'User'
+1528777719279	Move 'model' to 'daoimpl'
+1528777725258	Move 'model' to 'service'
+1528777730761	Move 'model' to 'src'
+1528777767495	Move 'model' to 'crudhibernatespring'

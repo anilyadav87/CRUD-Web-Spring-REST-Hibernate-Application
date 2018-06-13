@@ -1,0 +1,73 @@
+package com.niit.crudhibernatespring;
+
+import static org.junit.Assert.assertEquals;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.niit.crudhibernatespring.configuration.ConfigurationUser;
+import com.niit.crudhibernatespring.dao.UserDAO;
+import com.niit.crudhibernatespring.model.User;
+
+
+@RunWith(SpringRunner.class)
+@SpringJUnitConfig(classes=ConfigurationUser.class)
+public class springTest
+{
+	@Autowired
+	UserDAO userDAO;
+	
+	
+	User user;
+	@Before
+	public void setUp()
+	{
+		//userDAO = new UserDAOImpl();
+	}
+	@After
+	public void tearDown()
+	{
+		userDAO = null;
+	}
+	@Ignore
+	@Test
+	public void addUser() {
+	
+		
+		user = new User();
+		//System.out.println("hello");
+		user.setFirstName("anvesha");
+		user.setLastName("yadav");
+		user.setAddress("andheri");
+		user.seteMail("anil.y@gmail.com");
+		user.setPassword("1233");
+		assertEquals(true, userDAO.addUser(user));
+	}
+	@Ignore
+	@Test
+	public void updateUser() {
+		user=new User();		
+		//System.out.println("hi");
+		user.setFirstName("sunil");
+		user.setLastName("yadav");
+		user.setAddress("andheri");
+		user.seteMail("anil.y@gmail.com");
+		user.setPassword("1233");
+		user.setUserId(66);
+		assertEquals(true, userDAO.updateRecord(user));
+	}
+	//@Ignore
+	@Test
+	public void deleteUser()
+	{
+		user = new User();
+		user.setUserId(34);
+		assertEquals(true, userDAO.deleteRecord(user));
+	}
+	
+}

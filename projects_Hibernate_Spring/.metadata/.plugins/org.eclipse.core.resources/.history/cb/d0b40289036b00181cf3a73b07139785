@@ -1,0 +1,5 @@
+package com.niit.crudhibernatespring.configuration;
+
+public class ConfigurationUser {
+
+}

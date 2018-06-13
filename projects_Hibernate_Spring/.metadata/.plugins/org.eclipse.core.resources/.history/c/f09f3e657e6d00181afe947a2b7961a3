@@ -1,0 +1,66 @@
+package com.niit.crudhibernatespring;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import com.niit.crudhibernatespring.dao.UserDAO;
+import com.niit.crudhibernatespring.model.*;
+import com.niit.crudhibernatespring.daoimpl.UserDAOImpl;
+
+public class User 
+{
+
+
+	UserDAO userDAO;
+	
+	@Before
+	public void setUp()
+	{
+		userDAO = new UserDAOImpl();
+	}
+	@After
+	public void tearDown()
+	{
+		userDAO = null;
+	}
+	@Ignore
+	@Test
+	public void addUser() {
+	
+		
+		UserTest user = new UserTest();
+		user.setFirstName("anil");
+		user.setLastName("yadav");
+		user.setAddress("andheri");
+		user.seteMail("anil.y@gmail.com");
+		user.setPassword("1233");
+		assertEquals(true, userDAO.addUser(user));
+	}
+	
+	@Test
+	public void updateUser() {
+		UserTest user=new UserTest();		
+		System.out.println("hi");
+		user.setFirstName("anvesha");
+		user.setLastName("yadav");
+		user.setAddress("andheri");
+		user.seteMail("anil.y@gmail.com");
+		user.setPassword("1233");
+		userDAO.updateRecord(user);
+		
+		boolean flag1 = false;
+		if(1 != user.getUserId()) {
+			flag1 = true;
+			assertTrue(true);
+		}
+		else {
+			flag1 = false;
+			assertTrue(false);
+		}
+		
+	}
+}
